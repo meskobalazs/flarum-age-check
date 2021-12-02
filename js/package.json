@@ -1,5 +1,5 @@
 {
-  "name": "@webbinaro/flarum-site-splashpage",
+  "name": "@webbinaro/flarum-age-check",
   "version": "0.0.0",
   "private": true,
   "prettier": "@flarum/prettier-config",

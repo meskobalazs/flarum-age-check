@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of webbinaro/flarum-site-splashpage.
+ * This file is part of webbinaro/flarum-age-check.
  *
  * Copyright (c) 2021 Eddie Webbinaro.
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Webbinaro\SiteSplashpage;
+namespace Webbinaro\AgeCheck;
 
 use Flarum\Extend;
 

@@ -1,5 +1,5 @@
 {
-    "name": "webbinaro/flarum-site-splashpage",
+    "name": "webbinaro/flarum-age-check",
     "description": "Adds a modal that blocks site access until user accepts modal. Used for age verification or  critical announcements. ",
     "keywords": [
         "flarum"
@@ -21,17 +21,17 @@
     ],
     "autoload": {
         "psr-4": {
-            "Webbinaro\\SiteSplashpage\\": "src/"
+            "Webbinaro\\AgeCheck\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Webbinaro\\SiteSplashpage\\Tests\\": "tests/"
+            "Webbinaro\\AgeCheck\\Tests\\": "tests/"
         }
     },
     "extra": {
         "flarum-extension": {
-            "title": "Sitewide Splashpage for Flarum",
+            "title": "Age Verification Splash for Flarum",
             "category": "",
             "icon": {
                 "name": "",

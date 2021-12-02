@@ -1,3 +1,3 @@
-app.initializers.add('webbinaro/flarum-site-splashpage', () => {
-  console.log('[webbinaro/flarum-site-splashpage] Hello, admin!');
+app.initializers.add('webbinaro/flarum-age-check', () => {
+  console.log('[webbinaro/flarum-age-check] Hello, admin!');
 });

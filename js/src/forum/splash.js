@@ -8,7 +8,7 @@ export default class SiteSplash extends Component {
   view() {
     if( ! this.attrs.enterText ) this.attrs.enterText = "Yes"
     if( ! this.attrs.exitText ) this.attrs.exitText = "No"
-    if( ! this.attrs.verifyPrompt ) this.attrs.verifyPrompt = "By clicking enter, I certify that I am over the age of 21 and will comply with the above statement."
+    if( ! this.attrs.verifyPrompt ) this.attrs.verifyPrompt = "By clicking enter, I certify that I am over the age of 21 with legal right to cultivate and process cannabis."
     
     // we already hassled them, show noting
     if (sessionStorage.getItem('ageVerify') == 'true') {
@@ -21,7 +21,7 @@ export default class SiteSplash extends Component {
     return (
     <article class="verifybox">
         <div class="verifybox-left">
-            <img src="http://uiclients.com/thinc/assets/images/thinc-drop-white.svg" />
+           
             <p>This forum is only for use in states where the cultivation and processing of cannabis is legal. </p>
         </div>
         <div class="verifybox-right">
