@@ -7,16 +7,25 @@ app.initializers.add('webbinaro/flarum-age-check', () => {
 
 extend(DiscussionPage.prototype, 'pageContent', (items) => { 
   items.add('agebox', <SiteSplash />);
+  $(".DiscussionPage-stream").addClass('thegoods')
   return items;
 });
 
 
-extend(IndexPage.prototype, 'viewItems', (items) => { 
+extend(IndexPage.prototype, 'sidebarItems', (items) => { 
   items.add('agebox', <SiteSplash />);
+  $(".DiscussionList").addClass('thegoods')
+  $(".item-nav").addClass('thegoods')
+  $(".App-primaryControl ").addClass('thegoods')
+
   return items;
 });
 
   console.log('[webbinaro/flarum-age-check] intialized');
   
 });
+/* 
+override(IndexPage.prototype, 'hero', (items) => { 
 
+  return (<SiteSplash/>)
+}); */

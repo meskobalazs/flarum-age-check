@@ -34,18 +34,39 @@ button.btn{
   }
 }
 
-.verifybox{
-  background: #fff;
-  position: absolute;
+.blur{
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.nonobox{
+  background: rgba(0,0,0,0.4);
+
+  position: fixed;
   left: 0;
   right: 0;
-  top: 20%;
   bottom: 0;
+  margin: 0 0;
+  z-index: 9998;
+  width: 100%;
+  height: 100%;
+  display:block;
+  padding:0;
+  overflow: hidden;
+
+}
+
+.verifybox{
+  background: #fff;
+  position: relative;
+  top: 20%;
   margin: 0 auto;
-  z-index: 9;
+  z-index: 9999;
   width: 70%;
   height: 40%;
   display:table;
+
+  
   
   .verifybox-left, .verifybox-right{
     width: 100%;
