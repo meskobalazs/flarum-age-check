@@ -12,6 +12,6 @@ app.initializers.add('webbinaro/flarum-site-splashpage', () => {
 extend(DiscussionPage.prototype, 'pageContent', (items) => { 
   
   console.log(items)
-  items.add('agebox', <p>NO</p>);
+  items.add('agebox', <SiteSplash consentMessage="Yes"/>);
   return items;
 });

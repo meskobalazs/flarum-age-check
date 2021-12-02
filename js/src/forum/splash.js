@@ -3,53 +3,57 @@ import Component from 'flarum/common/Component';
 export default class SiteSplash extends Component {
   oninit(vnode) {
     super.oninit(vnode);
-
-    this.message = "I am 21 years of age or older.";
-    this.consent_message = "Yes"
-    this.dismiss_message = "No"
   }
 
   view() {
+    if( ! this.attrs.enterText ) this.attrs.enterText = "Yes"
+    if( ! this.attrs.exitText ) this.attrs.exitText = "No"
+    if( ! this.attrs.verifyPrompt ) this.attrs.verifyPrompt = "By clicking enter, I certify that I am over the age of 21 and will comply with the above statement."
+    
+    // we already hassled them, show noting
+    if (sessionStorage.getItem('ageVerify') == 'true') {
+        return "";
+    }
+     
+    //we don't know them, prompt with screenblock (from https://codepen.io/amirnaeem/pen/GZmXwr)
+
+     
     return (
-        // from https://codepen.io/amirnaeem/pen/GZmXwr
-    <article class="box">
-        <div class="box-left">
+    <article class="verifybox">
+        <div class="verifybox-left">
             <img src="http://uiclients.com/thinc/assets/images/thinc-drop-white.svg" />
-            <p>THINC Pure products are only for use in states where the sale and consumption of such products are legal. </p>
+            <p>This forum is only for use in states where the cultivation and processing of cannabis is legal. </p>
         </div>
-        <div class="box-right">
+        <div class="verifybox-right">
             <h3>Age Verification</h3>
-            <p>By clicking enter, I certify that I am over the age of 21 and will comply with the above statement.</p>
-            
-            <a href="#" class="btn btn-alpha"  id="refresh-page">ENTER</a>
+            <p>{this.attrs.verifyPrompt}</p>
+            {this.attrs.consentMessage}
+            <button id='consent-enter' class="btn btn-alpha" 
+                onclick={(e)=>{
+                    $('.box').hide();
+                    sessionStorage.setItem('ageVerify','true');
+                    }} >
+                { this.attrs.enterText}
+            </button>
             
             <p class="decor-line"><span>Or</span></p>
-            
-            <a href="#" class="btn btn-beta" id="reset-session">EXIT</a>
+
+            <button class="btn btn-beta" id="consent-exit" 
+                onclick={(e)=>{
+                    window.history.back()
+                    }} >
+                {this.attrs.exitText}
+            </button>
             
             <small>Always enjoy responsibily.</small>
         </div>
     </article>
   
-   /*  <div class="overlay-verify"></div>
-
-      <div>
-        <p>{this.message}</p>
-        <button onclick={e => this.message=thanks}>
-          {this.attrs.consentMessage}
-        </button>
-      </div> */
     );
   }
 
   oncreate(vnode) {
     super.oncreate(vnode);
-
-    // We aren't actually doing anything here, but this would
-    // be a good place to attach event handlers, initialize libraries
-    // like sortable, or make other DOM modifications.
-    $element = this.$();
-    $button = this.$('button');
   }
 }
 

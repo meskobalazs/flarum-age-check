@@ -167,7 +167,9 @@ app.initializers.add('webbinaro/flarum-site-splashpage', function () {
 });
 Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_3__["extend"])(flarum_forum_components_DiscussionPage__WEBPACK_IMPORTED_MODULE_0___default.a.prototype, 'pageContent', function (items) {
   console.log(items);
-  items.add('agebox', m("p", null, "NO"));
+  items.add('agebox', m(_splash__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    consentMessage: "Yes"
+  }));
   return items;
 });
 
@@ -200,52 +202,46 @@ var SiteSplash = /*#__PURE__*/function (_Component) {
 
   _proto.oninit = function oninit(vnode) {
     _Component.prototype.oninit.call(this, vnode);
-
-    this.message = "I am 21 years of age or older.";
-    this.consent_message = "Yes";
-    this.dismiss_message = "No";
   };
 
   _proto.view = function view() {
-    return (// from https://codepen.io/amirnaeem/pen/GZmXwr
-      m("article", {
-        "class": "box"
-      }, m("div", {
-        "class": "box-left"
-      }, m("img", {
-        src: "http://uiclients.com/thinc/assets/images/thinc-drop-white.svg"
-      }), m("p", null, "THINC Pure products are only for use in states where the sale and consumption of such products are legal. ")), m("div", {
-        "class": "box-right"
-      }, m("h3", null, "Age Verification"), m("p", null, "By clicking enter, I certify that I am over the age of 21 and will comply with the above statement."), m("a", {
-        href: "#",
-        "class": "btn btn-alpha",
-        id: "refresh-page"
-      }, "ENTER"), m("p", {
-        "class": "decor-line"
-      }, m("span", null, "Or")), m("a", {
-        href: "#",
-        "class": "btn btn-beta",
-        id: "reset-session"
-      }, "EXIT"), m("small", null, "Always enjoy responsibily.")))
-      /*  <div class="overlay-verify"></div>
-          <div>
-           <p>{this.message}</p>
-           <button onclick={e => this.message=thanks}>
-             {this.attrs.consentMessage}
-           </button>
-         </div> */
+    if (!this.attrs.enterText) this.attrs.enterText = "Yes";
+    if (!this.attrs.exitText) this.attrs.exitText = "No";
+    if (!this.attrs.verifyPrompt) this.attrs.verifyPrompt = "By clicking enter, I certify that I am over the age of 21 and will comply with the above statement."; // we already hassled them, show noting
 
-    );
+    if (sessionStorage.getItem('ageVerify') == 'true') {
+      return "";
+    } //we don't know them, prompt with screenblock (from https://codepen.io/amirnaeem/pen/GZmXwr)
+
+
+    return m("article", {
+      "class": "verifybox"
+    }, m("div", {
+      "class": "verifybox-left"
+    }, m("img", {
+      src: "http://uiclients.com/thinc/assets/images/thinc-drop-white.svg"
+    }), m("p", null, "This forum is only for use in states where the cultivation and processing of cannabis is legal. ")), m("div", {
+      "class": "verifybox-right"
+    }, m("h3", null, "Age Verification"), m("p", null, this.attrs.verifyPrompt), this.attrs.consentMessage, m("button", {
+      id: "consent-enter",
+      "class": "btn btn-alpha",
+      onclick: function onclick(e) {
+        $('.box').hide();
+        sessionStorage.setItem('ageVerify', 'true');
+      }
+    }, this.attrs.enterText), m("p", {
+      "class": "decor-line"
+    }, m("span", null, "Or")), m("button", {
+      "class": "btn btn-beta",
+      id: "consent-exit",
+      onclick: function onclick(e) {
+        window.history.back();
+      }
+    }, this.attrs.exitText), m("small", null, "Always enjoy responsibily.")));
   };
 
   _proto.oncreate = function oncreate(vnode) {
-    _Component.prototype.oncreate.call(this, vnode); // We aren't actually doing anything here, but this would
-    // be a good place to attach event handlers, initialize libraries
-    // like sortable, or make other DOM modifications.
-
-
-    $element = this.$();
-    $button = this.$('button');
+    _Component.prototype.oncreate.call(this, vnode);
   };
 
   return SiteSplash;
