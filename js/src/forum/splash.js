@@ -8,9 +8,10 @@ export default class SiteSplash extends Component {
   view() {
     if( ! this.attrs.enterText ) this.attrs.enterText = "Yes"
     if( ! this.attrs.exitText ) this.attrs.exitText = "No"
-    if( ! this.attrs.verifyPrompt ) this.attrs.verifyPrompt = "By clicking enter, I certify that I am over the age of 21 with legal right to cultivate and process cannabis."
+    if( ! this.attrs.verifyPrompt ) this.attrs.verifyPrompt = "By clicking 'Yes', you agree to be over the age of 21 with legal right to cultivate and process cannabis."
     
     // we already hassled them, show noting
+    // **NOTE:** I use session storage as it may be a shared computer, clear when page closes
     if (sessionStorage.getItem('ageVerify') == 'true') {
         return "";
     }
