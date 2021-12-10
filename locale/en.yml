@@ -1,7 +1,12 @@
-webbinaro-site-splashpage:
-  # For more details on the format
-  # Checkout https://docs.flarum.org/extend/i18n.html#appendix-a-standard-key-format
+webbinaro-age-check:
   admin:
-    my_cool_key: My Cool Key
-
-  forum:
+    labels:
+      buttons:
+        yes: "Enter Button Label"
+        yes_help: "Usuall 'Enter' or 'Yes'"
+        yes_default: "Yes"
+        no: "Exit Button Label"
+        no_help: "Usuall 'Exit' or 'No'"
+      messages:
+        consent_prompt: "Prompt used for agreement?"
+        consent_prompt_help: The blurb right above your yes/no buttons. 

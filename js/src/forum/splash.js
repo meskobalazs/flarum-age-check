@@ -6,9 +6,9 @@ export default class SiteSplash extends Component {
   }
 
   view() {
-    if( ! this.attrs.enterText ) this.attrs.enterText = "Yes"
-    if( ! this.attrs.exitText ) this.attrs.exitText = "No"
-    if( ! this.attrs.verifyPrompt ) this.attrs.verifyPrompt = "By clicking 'Yes', you agree to be over the age of 21 with legal right to cultivate and process cannabis."
+    if( ! this.attrs.enterText ) this.attrs.enterText = app.forum.attribute("age_yes")
+    if( ! this.attrs.exitText ) this.attrs.exitText = app.forum.attribute("age_no")
+    if( ! this.attrs.verifyPrompt ) this.attrs.verifyPrompt = app.forum.attribute("age_prompt")
     
     // we already hassled them, show noting
     // **NOTE:** I use session storage as it may be a shared computer, clear when page closes
@@ -21,14 +21,14 @@ export default class SiteSplash extends Component {
     return (
       <div class="nonobox">
           <div class="verifybox">
-              <div class="verifybox-left">
+              <div class="verifybox-left" style="background:url({ app.forum.attribute('age_image'}) 50% 50%;
+    ">
                 
-                  <p>This forum is only for use in states where the cultivation and processing of cannabis is legal. </p>
+                  <p> {app.forum.attribute('age_message')} </p>
               </div>
               <div class="verifybox-right">
                   <h3>Age Verification</h3>
                   <p>{this.attrs.verifyPrompt}</p>
-                  {this.attrs.consentMessage}
                   <button id='consent-enter' class="btn btn-alpha" 
                       onclick={(e)=>{
                           $('.thegoods').removeClass('blur')
