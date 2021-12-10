@@ -15,15 +15,14 @@ export default class SiteSplash extends Component {
     if (sessionStorage.getItem('ageVerify') == 'true') {
         return "";
     }
+    console.log(app.forum.attribute('age_image'))
      
     //we don't know them, prompt with screenblock (from https://codepen.io/amirnaeem/pen/GZmXwr)
     $('.thegoods').addClass("blur")
     return (
       <div class="nonobox">
           <div class="verifybox">
-              <div class="verifybox-left" style="background:url({ app.forum.attribute('age_image'}) 50% 50%;
-    ">
-                
+              <div class="verifybox-left" style={{backgroundImage: "url(" + app.forum.attribute('age_image') + ")",backgroundPosition: "50% 50%"}}>
                   <p> {app.forum.attribute('age_message')} </p>
               </div>
               <div class="verifybox-right">
