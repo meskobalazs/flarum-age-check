@@ -1,8 +1,10 @@
-# Sitewide Splashpage for Flarum
+# Age Checker for Flarum
 
 ![License](https://img.shields.io/badge/license-GPL-3.0-or-later-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/webbinaro/flarum-age-check.svg)](https://packagist.org/packages/webbinaro/flarum-age-check) [![Total Downloads](https://img.shields.io/packagist/dt/webbinaro/flarum-age-check.svg)](https://packagist.org/packages/webbinaro/flarum-age-check)
 
-A [Flarum](http://flarum.org) extension. Adds a modal that blocks site access until user accepts modal. Used for age verification or  critical announcements. 
+A [Flarum](http://flarum.org) extension that blurs out any site content until the user accepts a legal disclaimer that you configure in the UI.
+
+![sample user site blocked out showing modal](screenshot.png)
 
 ## Installation
 
