@@ -34,9 +34,9 @@
             "title": "Age Check / Splash Screen / Site Announce for Flarum",
             "category": "",
             "icon": {
-                "name": "",
-                "backgroundColor": "",
-                "color": ""
+                "name": "fas fa-hand-paper",
+                "backgroundColor": "black",
+                "color": "red"
             }
         }
     },
