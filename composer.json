@@ -1,6 +1,6 @@
 {
     "name": "webbinaro/flarum-age-check",
-    "description": "Adds a modal that blocks site access until user accepts modal. Used for age verification or  critical announcements. ",
+    "description": "Blurs site until visitors accept your blurb, can be used for age verification or crtical nnouncements. ",
     "keywords": [
         "flarum"
     ],
@@ -31,7 +31,7 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "Age Verification Splash for Flarum",
+            "title": "Age Check / Splash Screen / Site Announce for Flarum",
             "category": "",
             "icon": {
                 "name": "",

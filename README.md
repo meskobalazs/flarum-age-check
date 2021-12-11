@@ -26,4 +26,4 @@ php flarum cache:clear
 
 - [Packagist](https://packagist.org/packages/webbinaro/flarum-age-check)
 - [GitHub](https://github.com/webbinaro/flarum-age-check)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [Discuss](https://discuss.flarum.org/d/29656-age-checker-age-verification-for-flarum-forum)
