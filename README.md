@@ -1,10 +1,10 @@
 # Age Checker for Flarum
 
-![License](https://img.shields.io/github/license/eddiewebb/flarum-age-check) [![Latest Stable Version](https://img.shields.io/packagist/v/webbinaro/flarum-age-check.svg)](https://packagist.org/packages/webbinaro/flarum-age-check) [![Total Downloads](https://img.shields.io/packagist/dt/webbinaro/flarum-age-check.svg)](https://packagist.org/packages/webbinaro/flarum-age-check)
+![License](https://img.shields.io/github/license/eddiewebb/flarum-age-check) [![Latest Stable Version](https://img.shields.io/packagist/v/webbinaro/flarum-age-check.svg)](https://packagist.org/packages/webbinaro/flarum-age-check) [![Total Downloads](https://img.shields.io/packagist/dt/webbinaro/flarum-age-check.svg)](https://packagist.org/packages/webbinaro/flarum-age-check)https://img.shields.io/packagist/dm/webbinaro/flarum-age-check
 
 A [Flarum](http://flarum.org) extension that blurs out any site content until the user accepts a legal disclaimer that you configure in the UI.
 
-![sample user site blocked out showing modal](screenshot.png)
+![sample user site blocked out showing modal](https://github.com/eddiewebb/flarum-age-check/raw/main/screenshot.png)
 
 ## Installation
 
