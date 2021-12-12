@@ -3,9 +3,9 @@ import IndexPage from 'flarum/forum/components/IndexPage';
 import SiteSplash from './splash';
 import { extend, override } from 'flarum/common/extend';
 
-app.initializers.add('webbinaro/flarum-age-check', (app) => {
-    
-    
+
+app.initializers.add('webbinaro/flarum-age-check', () => {
+
  
     extend(DiscussionPage.prototype, 'pageContent', (items) => { 
       items.add('agebox', <SiteSplash />);

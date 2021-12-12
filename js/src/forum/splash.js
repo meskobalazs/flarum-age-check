@@ -5,18 +5,17 @@ export default class SiteSplash extends Component {
     super.oninit(vnode);
   }
 
-  view() {
+  view() { 
+    // we already hassled them, show noting
+    // **NOTE:** I use session storage as it may be a shared computer, clear when page closes
+    if ( app.session.user || sessionStorage.getItem('ageVerify') == 'true') {
+        return "";
+    }
+     
     if( ! this.attrs.enterText ) this.attrs.enterText = app.forum.attribute("age_yes")
     if( ! this.attrs.exitText ) this.attrs.exitText = app.forum.attribute("age_no")
     if( ! this.attrs.verifyPrompt ) this.attrs.verifyPrompt = app.forum.attribute("age_prompt")
     
-    // we already hassled them, show noting
-    // **NOTE:** I use session storage as it may be a shared computer, clear when page closes
-    if (sessionStorage.getItem('ageVerify') == 'true') {
-        return "";
-    }
-    console.log(app.forum.attribute('age_image'))
-     
     //we don't know them, prompt with screenblock (from https://codepen.io/amirnaeem/pen/GZmXwr)
     $('.thegoods').addClass("blur")
     return (
@@ -57,6 +56,3 @@ export default class SiteSplash extends Component {
     super.oncreate(vnode);
   }
 }
-
-
-//m.mount(document.body, <SiteSplash consentMessage="Increment" />);
