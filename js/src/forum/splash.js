@@ -8,7 +8,7 @@ export default class SiteSplash extends Component {
   view() { 
     // we already hassled them, show noting
     // **NOTE:** I use session storage as it may be a shared computer, clear when page closes
-    if ( app.session.user || sessionStorage.getItem('ageVerify') == 'true') {
+    if ( app.session.user || localStorage.getItem('ageVerify') == 'true') {
         return "";
     }
      
@@ -31,7 +31,7 @@ export default class SiteSplash extends Component {
                       onclick={(e)=>{
                           $('.thegoods').removeClass('blur')
                           $('.box').hide();
-                          sessionStorage.setItem('ageVerify','true');
+                          localStorage.setItem('ageVerify','true');
                           }} >
                       { this.attrs.enterText}
                   </button>
