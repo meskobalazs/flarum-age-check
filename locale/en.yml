@@ -3,10 +3,10 @@ webbinaro-age-check:
     labels:
       buttons:
         yes: "Enter Button Label"
-        yes_help: "Usuall 'Enter' or 'Yes'"
+        yes_help: "Usually 'Enter' or 'Yes'"
         yes_default: "Yes"
         no: "Exit Button Label"
-        no_help: "Usuall 'Exit' or 'No'"
+        no_help: "Usually 'Exit' or 'No'"
       messages:
         consent_prompt: "Prompt used for agreement?"
         consent_prompt_help: The blurb right above your yes/no buttons. 
